@@ -192,7 +192,7 @@ mod inner {
         /// Obtains the needed flags for the C++ compiler.
         fn cppflags(&mut self) -> Result<String> {
             self.rep
-                .run(&["--cflags", "icu-i18n"])
+                .run(&["--cflags", "--keep-system-cflags", "icu-i18n"])
                 .with_context(|| "while getting the cpp flags")
         }
 
